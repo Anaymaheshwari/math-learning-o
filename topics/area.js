@@ -1,6 +1,16 @@
 // Logic code for Area will go here
 // topics/area.js
 
+// area.js
+export function solve(input) {
+  const match = input.match(/area of square.*?(\d+)/i);
+  if (match) {
+    const side = parseFloat(match[1]);
+    return `Area of square = ${side} × ${side} = ${side * side} sq units`;
+  }
+  return "Sorry, I couldn’t understand the question for area.";
+}
+ 
 // Area of a square: side^2
 function areaSquare(side) {
   return side * side;
