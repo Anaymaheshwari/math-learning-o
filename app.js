@@ -54,6 +54,17 @@ window.handleVoice = function () {
     // Optionally call your solver logic here with the voice text
   });
 };
+import { solveQuestion } from './utils/logicEngine.js';
+
+window.solveLogic = function () {
+  const topic = document.getElementById("topicSelector").value;
+  const input = document.getElementById("logicInput").value.trim();
+
+  if (!topic || !input) return alert("Please select a topic and type a question.");
+
+  const result = solveQuestion(topic, input);
+  container.innerHTML = `<h3>Solution:</h3><p>${result}</p>`;
+};
 
 };
 
