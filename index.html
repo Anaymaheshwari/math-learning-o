@@ -1,34 +1,43 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Math Learning-o</title>
+  <title>Math Learning-o App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>📚 Math Learning-o App</h1>
-    <p>Select a topic to begin learning or practicing math:</p>
+  <h1>Math Learning-o App</h1>
 
-    <select id="topicSelect">
-      <option value="">-- Choose a topic --</option>
-      <option value="exponents">Exponents</option>
-      <option value="percentage">Percentage</option>
-      <option value="algebra">Algebraic Expressions</option>
-      <option value="factorisation">Factorisation</option>
-      <option value="inequalities">Inequalities</option>
-      <option value="geometry">Geometry</option>
-      <option value="linearEquations">Linear Equations</option>
-      <option value="rationalNumbers">Rational Numbers</option>
-      <option value="polynomials">Polynomials</option>
-      <option value="dataHandling">Data Handling</option>
-    </select>
+  <label for="topicSelector">Choose a Topic:</label>
+  <select id="topicSelector">
+    <option value="">--Select--</option>
+    <option value="exponents">Exponents</option>
+    <option value="percentage">Percentage</option>
+    <option value="algebra">Algebraic Expressions</option>
+    <option value="factorisation">Factorisation</option>
+    <option value="inequalities">Inequalities</option>
+    <option value="geometry">Geometry</option>
+    <option value="linearEquations">Linear Equations</option>
+    <option value="rationalNumbers">Rational Numbers</option>
+    <option value="polynomials">Polynomials</option>
+    <option value="dataHandling">Data Handling</option>
+    <option value="area">Area</option>
+    <option value="perimeter">Perimeter</option>
+    <option value="volumeAndSurfaceArea">Volume & Surface Area</option>
+    <option value="squaresCubesRoots">Squares, Cubes & Roots</option>
+    <option value="simpleInterest">Simple Interest</option>
+    <option value="compoundInterest">Compound Interest</option>
+    <option value="decimals">Decimals</option>
+    <option value="integers">Integers</option>
+    <option value="arithmeticOperations">Arithmetic Operations</option>
+    <option value="probability">Probability</option>
+  </select>
 
-    <div id="inputSection"></div>
-    <div id="outputSection"></div>
-  </div>
+  <button onclick="loadMCQ()">MCQ Quiz</button>
+  <button onclick="loadSubjective()">Subjective</button>
+
+  <div id="quizContainer"></div>
 
   <script type="module" src="app.js"></script>
 </body>
