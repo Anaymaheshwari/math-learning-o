@@ -63,7 +63,9 @@ window.solveLogic = function () {
   if (!topic || !input) return alert("Please select a topic and type a question.");
 
   const result = solveQuestion(topic, input);
-  container.innerHTML = `<h3>Solution:</h3><p>${result}</p>`;
+  container.innerHTML = `<h4>Solution:</h4><p>${result}</p>`;
+};
+
 };
 
 };
