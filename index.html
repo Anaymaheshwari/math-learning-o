@@ -38,14 +38,14 @@
   <button onclick="loadMCQ()">MCQ Quiz</button>
   <button onclick="loadSubjective()">Subjective</button>
 
-<h3>Upload Math Problem (Image)</h3>
+<h4>Upload Math Problem (Image)</h4>
 <input type="file" id="imageInput" accept="image/*">
 <button onclick="handleImage()">Extract Text</button>
 
-  <h5>Speak Math Problem</h3>
+  <h5>Speak Math Problem</h5>
 <button onclick="handleVoice()">🎤 Start Voice Input</button>
 
-<h4>🔍 Solve a Question</h3>
+<h3>🔍 Solve a Question</h3>
 <div id="solveLogicSection">
   <textarea id="logicInput" placeholder="Type your math question here..." rows="3" cols="50"></textarea><br>
   <button onclick="solveLogic()">Solve</button>
@@ -53,6 +53,8 @@
 
 
   <div id="quizContainer"></div>
+  container.innerHTML = `<h3>Solution:</h3><p>${result}</p>`;
+
 
   <script type="module" src="app.js"></script>
 </body>
