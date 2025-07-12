@@ -35,6 +35,17 @@ window.loadSubjective = function () {
   if (!topic) return alert("Please select a topic");
   renderSubjective(topic, container);
 };
+import { extractTextFromImage } from './utils/ocr.js';
+
+window.handleImage = function () {
+  const fileInput = document.getElementById('imageInput');
+  if (!fileInput.files[0]) return alert("Please upload an image");
+
+  extractTextFromImage(fileInput.files[0], (text) => {
+    alert("Extracted Text:\n" + text);
+    // Optionally call your solver logic here with the extracted text
+  });
+};
 
 // Export logic objects if needed elsewhere
 export const logicModules = {
