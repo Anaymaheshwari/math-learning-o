@@ -1,16 +1,17 @@
-// Logic code for Area will go here
 // topics/area.js
 
-// area.js
-export function solve(input) {
-  const match = input.match(/area of square.*?(\d+)/i);
+function solve(input) {
+  input = input.toLowerCase();
+
+  const match = input.match(/area of square.*?(\d+\.?\d*)/);
   if (match) {
     const side = parseFloat(match[1]);
     return `Area of square = ${side} × ${side} = ${side * side} sq units`;
   }
+
   return "Sorry, I couldn’t understand the question for area.";
 }
- 
+
 // Area of a square: side^2
 function areaSquare(side) {
   return side * side;
@@ -36,7 +37,7 @@ function areaTrapezium(a, b, height) {
   return 0.5 * (a + b) * height;
 }
 
-// Area of regular polygon (n sides, side length s, apothem a)
+// Area of regular polygon
 function areaPolygon(n, sideLength, apothem) {
   return 0.5 * n * sideLength * apothem;
 }
@@ -51,7 +52,9 @@ function radiusFromAreaCircle(area) {
   return Math.sqrt(area / Math.PI).toFixed(2);
 }
 
+// ✅ SINGLE export block
 export {
+  solve,
   areaSquare,
   areaRectangle,
   areaCircle,
