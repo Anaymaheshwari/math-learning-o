@@ -22,55 +22,8 @@ import * as integers from './topics/integers.js';
 import * as arithmeticOperations from './topics/arithmeticOperations.js';
 import * as probability from './topics/probability.js';
 
-const container = document.getElementById("quizContainer");
-
-window.loadMCQ = function () {
-  const topic = document.getElementById("topicSelector").value;
-  if (!topic) return alert("Please select a topic");
-  renderMCQ(topic, container);
-};
-
-window.loadSubjective = function () {
-  const topic = document.getElementById("topicSelector").value;
-  if (!topic) return alert("Please select a topic");
-  renderSubjective(topic, container);
-};
-import { extractTextFromImage } from './utils/ocr.js';
-
-window.handleImage = function () {
-  const fileInput = document.getElementById('imageInput');
-  if (!fileInput.files[0]) return alert("Please upload an image");
-
-  extractTextFromImage(fileInput.files[0], (text) => {
-    alert("Extracted Text:\n" + text);
-    // Optionally call your solver logic here with the extracted text
-  });
-  
-import { startVoiceInput } from './utils/speech.js';
-
-window.handleVoice = function () {
-  startVoiceInput((text) => {
-    alert("You said:\n" + text);
-    // Optionally call your solver logic here with the voice text
-  });
-};
 import { solveQuestion } from './utils/logicEngine.js';
 
-window.solveLogic = function () {
-  const topic = document.getElementById("topicSelector").value;
-  const input = document.getElementById("logicInput").value.trim();
-
-  if (!topic || !input) return alert("Please select a topic and type a question.");
-
-  const result = solveQuestion(topic, input);
-  container.innerHTML = `<h4>Solution:</h4><p>${result}</p>`;
-};
-
-};
-
-};
-
-// Export logic objects if needed elsewhere
 export const logicModules = {
   exponents,
   percentage,
@@ -93,3 +46,39 @@ export const logicModules = {
   arithmeticOperations,
   probability
 };
+
+const container = document.getElementById("quizContainer");
+
+window.solveLogic = function () {
+  const topic = document.getElementById("topicSelector").value;
+  const input = document.getElementById("logicInput").value.trim();
+
+  if (!topic || !input) return alert("Please select a topic and type a question.");
+
+  const result = solveQuestion(topic, input);
+  container.innerHTML = `<h3>Solution:</h3><p>${result}</p>`;
+};
+
+import { renderMCQ } from './mcq/mcqEngine.js';
+import { renderSubjective } from './subjective/subjectiveEngine.js';
+
+const container = document.getElementById("quizContainer");
+
+window.loadMCQ = function () {
+  const topic = document.getElementById("topicSelector").value;
+  if (!topic) return alert("Please select a topic");
+  renderMCQ(topic, container);
+};
+
+window.loadSubjective = function () {
+  const topic = document.getElementById("topicSelector").value;
+  if (!topic) return alert("Please select a topic");
+  renderSubjective(topic, container);
+};
+
+import { extractTextFromImage } from './utils/ocr.js';
+
+window.extractImageText = async function () {
+  // OCR logic here
+};
+
