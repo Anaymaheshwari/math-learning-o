@@ -1,54 +1,47 @@
 //Logic code for Linear Equations will go here
 // topics/linearEquations.js
 
-// Solve 1-variable: ax + b = c
-function solveOneVariable(a, b, c) {
-  if (a === 0) return (b === c) ? "Infinite solutions" : "No solution";
+// Solve 1-variable linear equation ax + b = c
+function solveLinear1Var(a, b, c) {
   const x = (c - b) / a;
-  return `x = ${x.toFixed(2)}`;
+  return `x = ${x}`;
 }
 
-// Solve 2-variable system using substitution/determinants
-function solveTwoVariable(a1, b1, c1, a2, b2, c2) {
-  const D = a1 * b2 - a2 * b1;
-  if (D === 0) return "No unique solution";
-  const Dx = c1 * b2 - c2 * b1;
-  const Dy = a1 * c2 - a2 * c1;
-  const x = Dx / D;
-  const y = Dy / D;
-  return `x = ${x.toFixed(2)}, y = ${y.toFixed(2)}`;
+// Solve system of 2-variable linear equations using substitution
+function solveLinear2Var(eq1, eq2) {
+  // eq1, eq2 are in form: { a, b, c } for ax + by = c
+  const { a: a1, b: b1, c: c1 } = eq1;
+  const { a: a2, b: b2, c: c2 } = eq2;
+
+  const determinant = a1 * b2 - a2 * b1;
+  if (determinant === 0) return "No unique solution.";
+
+  const x = (c1 * b2 - c2 * b1) / determinant;
+  const y = (a1 * c2 - a2 * c1) / determinant;
+  return { x: x.toFixed(2), y: y.toFixed(2) };
 }
 
-// Word problem solver for common age and money-based questions
-// Format: { type: "ageSum", total: 40, diff: 4 }
-function solveLinearWordProblem(problem) {
-  switch (problem.type) {
-    case "ageSum":
-      // x + y = total, x - y = diff
-      const { total, diff } = problem;
-      const x = (total + diff) / 2;
-      const y = total - x;
-      return `Ages are: ${x} and ${y}`;
-    
-    case "moneyShare":
-      // A and B together have ₹T, and A has ₹more than B
-      const { totalMoney, diffMoney } = problem;
-      const A = (totalMoney + diffMoney) / 2;
-      const B = totalMoney - A;
-      return `A has ₹${A}, B has ₹${B}`;
-
-    case "costEquation":
-      // A pen + 2 pencils = ₹14, 2 pens + pencil = ₹19
-      const eq = solveTwoVariable(problem.a1, problem.b1, problem.c1, problem.a2, problem.b2, problem.c2);
-      return `Pen & Pencil prices: ${eq}`;
-    
+// Solve basic word problems
+function solveWordProblem(type, data) {
+  switch (type) {
+    case "cost":
+      // Example: 2 pens and 3 pencils cost Rs. 21, 3 pens and 2 pencils cost Rs. 24
+      const [e1, e2] = data;
+      return solveLinear2Var(e1, e2);
+    case "age1":
+      // "Sum of ages is S. A is older by D years than B"
+      const { sum, diff } = data;
+      const x = (sum - diff) / 2;
+      return { A: x + diff, B: x };
+    case "age2":
+      // "10 years ago, father was 3 times son. Now?" (let son = x)
+      const { yearsAgo, multiplier } = data;
+      const xNow = (yearsAgo * (multiplier - 1)) / (multiplier);
+      return {
+        Son: xNow,
+        Father: xNow + yearsAgo * multiplier
+      };
     default:
-      return "Unsupported word problem format.";
+      return "Word problem type not recognized.";
   }
 }
-
-export {
-  solveOneVariable,
-  solveTwoVariable,
-  solveLinearWordProblem
-};
