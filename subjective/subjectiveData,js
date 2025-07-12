@@ -1,0 +1,184 @@
+// subjective/subjectiveData.js
+
+export const subjectiveData = {
+  exponents: [
+    {
+      question: "Simplify: (2^3) × (2^4)",
+      answer: "2^7 or 128"
+    },
+    {
+      question: "Express 1/81 as a power of 3",
+      answer: "3^-4"
+    }
+  ],
+  percentage: [
+    {
+      question: "A student scored 72 out of 90. What is the percentage score?",
+      answer: "80%"
+    },
+    {
+      question: "What percent of 250 is 100?",
+      answer: "40%"
+    }
+  ],
+  algebra: [
+    {
+      question: "Simplify: (x + 3)(x - 2)",
+      answer: "x^2 + x - 6"
+    },
+    {
+      question: "Factorise: x^2 - 9",
+      answer: "(x - 3)(x + 3)"
+    }
+  ],
+  factorisation: [
+    {
+      question: "Factorise: x^2 + 7x + 10",
+      answer: "(x + 5)(x + 2)"
+    },
+    {
+      question: "Find HCF of 12x^2 and 18x",
+      answer: "6x"
+    }
+  ],
+  inequalities: [
+    {
+      question: "Solve: 3x - 5 > 10",
+      answer: "x > 5"
+    },
+    {
+      question: "Write a solution set for: x < 4, where x is a natural number",
+      answer: "{1, 2, 3}"
+    }
+  ],
+  geometry: [
+    {
+      question: "Find the area of a triangle with base 10 cm and height 6 cm",
+      answer: "30 cm²"
+    },
+    {
+      question: "How many degrees are there in the sum of angles of a quadrilateral?",
+      answer: "360°"
+    }
+  ],
+  linearEquations: [
+    {
+      question: "Solve: 3x + 4 = 19",
+      answer: "x = 5"
+    },
+    {
+      question: "A father is 3 times as old as his son. If the sum of their ages is 48, find their ages.",
+      answer: "Father = 36, Son = 12"
+    }
+  ],
+  rationalNumbers: [
+    {
+      question: "Simplify: (-3/4) + (2/5)",
+      answer: "-7/20"
+    },
+    {
+      question: "Is 0 a rational number? Explain.",
+      answer: "Yes, because 0 = 0/1"
+    }
+  ],
+  polynomials: [
+    {
+      question: "Add: (2x^2 + 3x + 1) + (x^2 - x + 4)",
+      answer: "3x^2 + 2x + 5"
+    },
+    {
+      question: "Find the degree of: x^3 + 4x^2 + 6",
+      answer: "3"
+    }
+  ],
+  dataHandling: [
+    {
+      question: "Draw a bar graph for marks scored in 3 subjects: Math - 80, Science - 70, English - 90",
+      answer: "Bar graph with correct labels and heights"
+    },
+    {
+      question: "What kind of graph is best to show data over time?",
+      answer: "Line graph"
+    }
+  ],
+  area: [
+    {
+      question: "Find the area of a rectangle with length 8 cm and breadth 6 cm",
+      answer: "48 cm²"
+    },
+    {
+      question: "What is the area of a circle with radius 7 cm (π = 22/7)?",
+      answer: "154 cm²"
+    }
+  ],
+  volumeAndSurfaceArea: [
+    {
+      question: "Find the volume of a cuboid 5 cm × 4 cm × 3 cm",
+      answer: "60 cm³"
+    },
+    {
+      question: "What is the surface area of a cube of side 6 cm?",
+      answer: "216 cm²"
+    }
+  ],
+  squaresCubesRoots: [
+    {
+      question: "Find the square root of 144",
+      answer: "12"
+    },
+    {
+      question: "What is the cube of 5?",
+      answer: "125"
+    }
+  ],
+  simpleInterest: [
+    {
+      question: "Find the simple interest on ₹1000 for 2 years at 5% per annum",
+      answer: "₹100"
+    },
+    {
+      question: "At what rate of interest will ₹2000 amount to ₹2400 in 4 years?",
+      answer: "5%"
+    }
+  ],
+  compoundInterest: [
+    {
+      question: "Find the compound interest on ₹5000 for 2 years at 10% per annum",
+      answer: "₹1050"
+    },
+    {
+      question: "Find amount when principal is ₹1000, rate is 10% and time is 2 years (compounded annually)",
+      answer: "₹1210"
+    }
+  ],
+  decimals: [
+    {
+      question: "Add: 3.6 + 2.45",
+      answer: "6.05"
+    },
+    {
+      question: "Multiply: 1.2 × 0.5",
+      answer: "0.6"
+    }
+  ],
+  integers: [
+    {
+      question: "Find: (-4) + 7",
+      answer: "3"
+    },
+    {
+      question: "Subtract: (-3) - (-8)",
+      answer: "5"
+    }
+  ],
+  arithmeticOperations: [
+    {
+      question: "What is 15 ÷ 3 × 2?",
+      answer: "10"
+    },
+    {
+      question: "Solve: 12 + 5 × 2",
+      answer: "22"
+    }
+  ]
+};
