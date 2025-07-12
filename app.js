@@ -45,6 +45,16 @@ window.handleImage = function () {
     alert("Extracted Text:\n" + text);
     // Optionally call your solver logic here with the extracted text
   });
+  
+import { startVoiceInput } from './utils/speech.js';
+
+window.handleVoice = function () {
+  startVoiceInput((text) => {
+    alert("You said:\n" + text);
+    // Optionally call your solver logic here with the voice text
+  });
+};
+
 };
 
 // Export logic objects if needed elsewhere
